@@ -14,15 +14,15 @@ An AI-powered mock interview platform that analyzes resumes, generates personali
 
 ## 📸 Screenshots
 
-![Landing Page](../screenshots/Landing%20page.png)
+![Landing Page](./screenshots/Landing%20page.png)
 
-![Interview Setup](../screenshots/Interview%20Setup.png)
+![Interview Setup](./screenshots/Interview%20Setup.png)
 
-![Resume Analysis](../screenshots/Resume%20analysis.png)
+![Resume Analysis](./screenshots/Resume%20analysis.png)
 
-![Analytics Dashboard](../screenshots/Analytics%20dashboard.png)
+![Analytics Dashboard](./screenshots/Analytics%20dashboard.png)
 
-![Pricing Plans](../screenshots/Pricing%20plans.png)
+![Pricing Plans](./screenshots/Pricing%20plans.png)
 
 ---
 
