@@ -11,7 +11,7 @@ import InterviewHistory from "./pages/InterviewHistory";
 import Pricing from "./pages/Pricing";
 import InterviewReport from "./pages/InterviewReport";
 
-export const ServerUrl = "https://ai-mern-project-4lru.onrender.com/";
+export const ServerUrl = "https://ai-mern-project-4lru.onrender.com";
 function App() {
 
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function App() {
       try {
 
         const result = await axios.get(
-          ServerUrl + "//api/user/current-user",
+          ServerUrl + "/api/user/current-user",
           {
             withCredentials: true
           }
