@@ -27,10 +27,11 @@ function Navbar() {
         await signOut(auth);
 
         try {
-            await axios.get(
+            await axios.post(
                 ServerUrl + "/api/auth/logout",
+                {},
                 { withCredentials: true }
-            );
+            )
         } catch (error) {
             console.log("Backend logout error:", error);
         }
