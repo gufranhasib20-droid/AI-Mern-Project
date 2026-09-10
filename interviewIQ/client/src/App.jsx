@@ -11,7 +11,7 @@ import InterviewHistory from "./pages/InterviewHistory";
 import Pricing from "./pages/Pricing";
 import InterviewReport from "./pages/InterviewReport";
 
-export const ServerUrl = import.meta.env.VITE_SERVER_URL;
+export const ServerUrl = "https://ai-mern-project-4lru.onrender.com";
 function App() {
 
   const dispatch = useDispatch();

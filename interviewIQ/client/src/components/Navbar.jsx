@@ -10,6 +10,8 @@ import axios from 'axios';
 import { ServerUrl } from '../App';
 import { setUserData } from '../redux/userSlice';
 import AuthModel from './AuthModel';
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
 function Navbar() {
 
     const { userData } = useSelector((state) => state.user)
@@ -20,19 +22,26 @@ function Navbar() {
     const [showAuth,setShowAuth]=useState(false);
 
 
-    const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
-        await axios.get(
-            ServerUrl + "/api/auth/logout",
-            { withCredentials: true }
-        )
+        await signOut(auth);
 
-        dispatch(setUserData(null))
-        setShowCreditPopup(false)
-        setShowUserPopup(false)
-        navigate("/")
+        try {
+            await axios.post(
+                ServerUrl + "/api/auth/logout",
+                {},
+                { withCredentials: true }
+            )
+        } catch (error) {
+            console.log("Backend logout error:", error);
+        }
+
+        dispatch(setUserData(null));
+        setShowCreditPopup(false);
+        setShowUserPopup(false);
+        navigate("/");
     } catch (error) {
-        console.log(error)
+        console.log("Firebase logout error:", error);
     }
 }
 
