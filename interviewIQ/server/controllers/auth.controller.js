@@ -31,14 +31,21 @@ export const googleAuth = async (req, res) => {
     }
 }
 
-export const logOut = async (req,res) => {
+export const logOut = async (req, res) => {
     try {
-        res.clearCookie("token")
-        return res.status(200).json({message:"Logout Succesfully"})
+        res.clearCookie("token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        })
+
+        return res.status(200).json({
+            message: "Logout Successfully"
+        })
     } catch (error) {
-        console.log("LOGOUT ORIGINAL ERROR",error);
-        return res.json({message:`Logout error ${error.message}`});
-        
+        console.log("LOGOUT ORIGINAL ERROR", error)
+        return res.status(500).json({
+            message: `Logout error ${error.message}`
+        })
     }
-    
-};
+}
